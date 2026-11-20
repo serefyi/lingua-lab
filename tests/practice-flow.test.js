@@ -126,7 +126,7 @@ function createAppHarness({ storageFails = false, speechSupported = true } = {})
       values.delete(key);
     }
   };
-  const state = { confirm: true, spoken: [], cancels: 0, clearedIntervals: [] };
+  const state = { confirm: true, spoken: [], cancels: 0, clearedIntervals: [], intervals: new Map() };
   const speechSynthesis = {
     speak(utterance) { state.spoken.push(utterance); },
     cancel() { state.cancels += 1; }
@@ -142,7 +142,11 @@ function createAppHarness({ storageFails = false, speechSupported = true } = {})
     window,
     localStorage: storage,
     SpeechSynthesisUtterance: FakeSpeech,
-    setInterval: () => nextInterval++,
+    setInterval: callback => {
+      const id = nextInterval++;
+      state.intervals.set(id, callback);
+      return id;
+    },
     clearInterval: id => state.clearedIntervals.push(id),
     Date,
     console
@@ -211,6 +215,24 @@ test('empty answers are rejected, completion is counted once, and local progress
   app.document.querySelector('#clearProgress').click();
   assert.equal(app.values.has('lingua-lab-progress-v1'), false);
   assert.equal(app.document.querySelector('#clearProgress').hidden, true);
+});
+
+test('the selected timer counts down and does not prevent completion after time expires', () => {
+  const app = createAppHarness();
+  app.document.querySelector('#durationSelect').value = '3';
+  app.document.querySelector('#startPractice').click();
+  const timer = app.document.querySelector('#practiceTimer');
+  const tick = app.state.intervals.values().next().value;
+  tick();
+  assert.equal(timer.textContent, '02:59');
+  for (let second = 1; second < 180; second += 1) tick();
+  assert.equal(timer.textContent, '時間到');
+  assert.equal(timer.classList.contains('timer-finished'), true);
+  assert.match(app.document.querySelector('#timerMessage').textContent, /可以繼續作答/);
+
+  app.document.querySelector('#answerInput').value = 'The next step is to share the draft.';
+  app.document.querySelector('#submitAnswer').click();
+  assert.equal(JSON.parse(app.values.get('lingua-lab-progress-v1')).total, 1);
 });
 
 test('listening audio has a transcript, plays with speech synthesis, and degrades without it', () => {

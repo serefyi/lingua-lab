@@ -29,6 +29,7 @@
 - GitHub Actions 若出現棄用 runtime 警告，應以官方 action release notes 核對 Node runtime 和額外權限要求，再更新相容主版本；Pages deploy action 更新時也要同步最小必要的 `actions: read` 權限。
 - 靜態網站部署很快，可以把 `node --check` 放在上傳 Pages artifact 之前，讓語法錯誤直接阻擋發布；這不取代瀏覽器互動測試或內容品質檢查。
 - 對無建置工具的互動原型，可用 Node 內建 `node:test` 與 `vm` 模擬少量 DOM／瀏覽器 API，驗證核心流程而不新增依賴；此類測試能抓狀態與分支回歸，但不能替代真實瀏覽器的排版、無障礙與裝置相容性檢查。
+- 練習流程測試應覆蓋所有情境／技能交叉選項、空白及重複提交、計時到期、語音 API 不支援和 `localStorage` 錯誤。測試替身要模擬 select 的 `change` 事件，否則可能把測試假物件缺少事件誤判成產品故障。
 
 ### 未來適用範圍
 
