@@ -28,6 +28,7 @@
 - 本機學習摘要雖然不含作答，也應提供明確的清除控制和確認，讓使用者管理這台裝置留下的狀態；清除失敗時需呈現原因且不影響練習。
 - GitHub Actions 若出現棄用 runtime 警告，應以官方 action release notes 核對 Node runtime 和額外權限要求，再更新相容主版本；Pages deploy action 更新時也要同步最小必要的 `actions: read` 權限。
 - 靜態網站部署很快，可以把 `node --check` 放在上傳 Pages artifact 之前，讓語法錯誤直接阻擋發布；這不取代瀏覽器互動測試或內容品質檢查。
+- 對無建置工具的互動原型，可用 Node 內建 `node:test` 與 `vm` 模擬少量 DOM／瀏覽器 API，驗證核心流程而不新增依賴；此類測試能抓狀態與分支回歸，但不能替代真實瀏覽器的排版、無障礙與裝置相容性檢查。
 
 ### 未來適用範圍
 

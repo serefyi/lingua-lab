@@ -23,6 +23,8 @@ jobs:
         uses: actions/checkout@v7
       - name: Check JavaScript syntax
         run: node --check app.js
+      - name: Run practice flow tests
+        run: node --test tests/practice-flow.test.js
       - name: Configure Pages
         uses: actions/configure-pages@v6
       - name: Upload site artifact
