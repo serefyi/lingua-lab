@@ -60,6 +60,7 @@ function readProgress() {
 
 function updateProgressSummary() {
   const progress = readProgress();
+  document.querySelector('#clearProgress').hidden = !progress.total;
   document.querySelector('#progressSummary').textContent = progress.total
     ? `這台裝置已完成 ${progress.total} 次單項練習`
     : '一次只專注一件事';
@@ -100,6 +101,15 @@ document.querySelectorAll('.skill-option').forEach(button => button.addEventList
 }));
 
 document.querySelector('#durationSelect').addEventListener('change', updatePreferenceSummary);
+document.querySelector('#clearProgress').addEventListener('click', () => {
+  if (!window.confirm('清除這台裝置上的完成次數摘要？練習回答不曾被保存。')) return;
+  try {
+    localStorage.removeItem(progressKey);
+    updateProgressSummary();
+  } catch {
+    document.querySelector('#progressDetails').textContent = '瀏覽器未允許清除本機摘要。';
+  }
+});
 
 function stopTimer() {
   if (timerInterval) clearInterval(timerInterval);
