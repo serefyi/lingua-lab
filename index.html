@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ef">
+  <meta name="description" content="從聽、說、讀、寫挑一項，練習商業英文、學術英文與自然表達。">
+  <title>Lingua Lab｜英文單項練習</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Lingua Lab 首頁"><span class="brand-mark">L<span>.</span></span><span>lingua lab</span></a>
+      <nav aria-label="主導覽"><a href="#practice">開始練習</a><a href="#how">使用方式</a></nav>
+      <a class="top-cta" href="#practice">挑選練習 <span>↗</span></a>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR ENGLISH, YOUR WAY</div>
+          <h1>英文不用一次考全部。<br><em>今天，專心練一件事。</em></h1>
+          <p class="hero-lede">從聽、說、讀、寫挑一項，配上你真正用得到的情境。短短幾分鐘，讓英文一點一點變成你的能力。</p>
+          <a class="primary-button" href="#practice">選一個練習 <span>↓</span></a>
+          <div class="hero-note"><span class="note-spark">✳</span> 不用模考，從一小步開始</div>
+        </div>
+        <div class="hero-art" aria-label="聽說讀寫四種練習卡片插畫">
+          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+          <div class="art-sticker sticker-top">5 MIN<br><small>YOUR PACE</small></div>
+          <div class="skill-card listen"><span class="skill-icon">♫</span><span>LISTEN</span><b>聽</b></div>
+          <div class="skill-card speak"><span class="skill-icon">◉</span><span>SPEAK</span><b>說</b></div>
+          <div class="skill-card read"><span class="skill-icon">▤</span><span>READ</span><b>讀</b></div>
+          <div class="skill-card write"><span class="skill-icon">✎</span><span>WRITE</span><b>寫</b></div>
+          <div class="art-center"><span>one</span><strong>thing</strong><span>at a time</span></div>
+          <div class="art-scribble">small steps<br>✨ big growth</div>
+        </div>
+        <div class="hero-bottom"><span>01 — 04</span><span>FOCUSED PRACTICE FOR REAL LIFE</span><span>SCROLL TO EXPLORE ↓</span></div>
+      </section>
+
+      <section class="practice section-wrap" id="practice">
+        <div class="section-heading"><div><div class="eyebrow"><span class="eyebrow-dot"></span> MAKE IT YOURS</div><h2>今天想練哪一種？</h2><p>先選英文用途，再選一項技能，開始你的單項練習。</p></div><div class="step-count"><span>STEP</span><b>01</b><i>/ 02</i></div></div>
+        <div class="selector-grid">
+          <div class="selector-column"><div class="selector-label"><span class="number">01</span><div><b>選擇英文情境</b><small>What are you learning for?</small></div></div>
+            <div class="choice-list" role="group" aria-label="選擇英文情境">
+              <button class="choice active" data-context="business"><span class="choice-icon business-icon">↗</span><span class="choice-copy"><b>商業英文</b><small>會議・簡報・商務往來</small></span><span class="choice-check">✓</span></button>
+              <button class="choice" data-context="academic"><span class="choice-icon academic-icon">⌑</span><span class="choice-copy"><b>學術英文</b><small>論文・摘要・課堂討論</small></span><span class="choice-check">✓</span></button>
+              <button class="choice" data-context="natural"><span class="choice-icon natural-icon">✳</span><span class="choice-copy"><b>道地英文分析</b><small>語氣・語境・自然說法</small></span><span class="choice-check">✓</span></button>
+            </div>
+          </div>
+          <div class="selector-column skill-column"><div class="selector-label"><span class="number">02</span><div><b>選擇一項技能</b><small>Pick one skill to focus on.</small></div></div>
+            <div class="skill-options" role="group" aria-label="選擇一項技能">
+              <button class="skill-option selected" data-skill="speaking"><span class="skill-option-icon">◉</span><span><b>口說</b><small>Speak</small></span><span class="option-arrow">↗</span></button>
+              <button class="skill-option" data-skill="listening"><span class="skill-option-icon">♫</span><span><b>聽力</b><small>Listen</small></span><span class="option-arrow">↗</span></button>
+              <button class="skill-option" data-skill="reading"><span class="skill-option-icon">▤</span><span><b>閱讀</b><small>Read</small></span><span class="option-arrow">↗</span></button>
+              <button class="skill-option" data-skill="writing"><span class="skill-option-icon">✎</span><span><b>寫作</b><small>Write</small></span><span class="option-arrow">↗</span></button>
+            </div>
+            <button class="start-button" id="startPractice">開始這次練習 <span>→</span></button>
+          </div>
+        </div>
+        <div class="session-strip"><span class="strip-icon">✳</span><span><b>一次只專注一件事</b><small>短練習・清楚回饋・照你的步調</small></span><span class="strip-time">約 5 分鐘</span></div>
+      </section>
+
+      <section class="how section-wrap" id="how"><div class="how-intro"><div class="eyebrow"><span class="eyebrow-dot"></span> A LITTLE GOES A LONG WAY</div><h2>有方向的小練習，<br><em>比一次全考更踏實。</em></h2><p>不用等準備好才開始。選定目標，做一個小練習，帶走下一步可以用上的回饋。</p></div>
+        <div class="steps"><article class="step-card"><span class="step-index">01</span><span class="step-illustration context-illu">◒</span><h3>從目標出發</h3><p>商務溝通、學術表達，或想知道一句話怎麼說更自然。</p><span class="step-tag">PICK A CONTEXT</span></article><article class="step-card"><span class="step-index">02</span><span class="step-illustration skill-illu">✳</span><h3>聚焦一項技能</h3><p>聽、說、讀、寫自由選。每次練習只把注意力放在一件事上。</p><span class="step-tag">FOCUS ON ONE</span></article><article class="step-card"><span class="step-index">03</span><span class="step-illustration feedback-illu">↗</span><h3>帶走有用回饋</h3><p>看懂哪裡做得好、哪裡能更清楚自然，知道接著怎麼進步。</p><span class="step-tag">GROW WITH FEEDBACK</span></article></div>
+      </section>
+
+      <section class="quote-band"><span class="quote-mark">“</span><p>Progress is made one small practice at a time.</p><span class="quote-credit">給每一個願意開始的你</span><span class="quote-spark">✳</span></section>
+    </main>
+    <footer><a class="brand footer-brand" href="#top"><span class="brand-mark">L<span>.</span></span><span>lingua lab</span></a><span>練習英文，照自己的方式。</span><a href="#practice">開始練習 ↑</a></footer>
+  </div>
+
+  <dialog id="practiceDialog" class="practice-dialog"><button class="dialog-close" id="closeDialog" aria-label="關閉">×</button><div class="eyebrow"><span class="eyebrow-dot"></span> YOUR 5-MINUTE PRACTICE</div><div id="practiceContent"></div></dialog>
+  <script src="app.js"></script>
+</body>
+</html>
