@@ -29,7 +29,8 @@
 
 - [x] 已建立 Lingua Lab 靜態網站概念版，支援選用途與技能並開始短練習。
 - [x] 已設定 GitHub Actions workflow，推送至 `main` 時建置並部署 GitHub Pages。
-- [ ] GitHub repository 尚未建立，尚未推送程式碼或確認 Pages 部署結果。
+- [x] 已建立公開 GitHub repository：[serefyi/lingua-lab](https://github.com/serefyi/lingua-lab)，並推送專案程式碼。
+- [x] GitHub Pages 已由 GitHub Actions 成功部署：https://serefyi.github.io/lingua-lab/。
 - [ ] 練習內容與回饋目前是前端示範，尚未接入 AI 評估或練習紀錄。
 
 ### 已完成項目
@@ -41,6 +42,9 @@
 - [x] 建立靜態網站首頁、情境／技能選擇器與短練習對話框。
 - [x] 建立 GitHub Pages Actions 部署 workflow。
 - [x] 新增專案 README 與舊目錄檔案排除規則。
+- [x] 建立公開 GitHub repository 並推送 `main` 分支。
+- [x] 設定 Pages 使用 GitHub Actions 作為發布來源。
+- [x] 確認 Actions build 與 deploy 成功，網站已上線。
 
 ### 待完成項目
 
@@ -52,8 +56,6 @@
 - [ ] 規劃練習紀錄與個人進步摘要的呈現方式。
 - [ ] 確認音訊、語音辨識及評分等功能需求與可行方案。
 - [ ] 完成第一版介面與產品規格。
-- [ ] 建立 GitHub repository、推送程式碼並啟用 GitHub Pages。
-- [ ] 確認 Actions 部署成功並更新正式網站網址。
 - [ ] 依使用回饋將前端示範逐步擴充成可評估、可追蹤的練習工具。
 
 ## 範圍原則
