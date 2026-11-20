@@ -58,10 +58,15 @@
               <button class="skill-option" data-skill="reading"><span class="skill-option-icon">▤</span><span><b>閱讀</b><small>Read</small></span><span class="option-arrow">↗</span></button>
               <button class="skill-option" data-skill="writing"><span class="skill-option-icon">✎</span><span><b>寫作</b><small>Write</small></span><span class="option-arrow">↗</span></button>
             </div>
+            <div class="practice-settings" aria-label="練習設定">
+              <label class="setting-control"><span>練習主題</span><select id="topicSelect" aria-label="練習主題"></select></label>
+              <label class="setting-control"><span>程度</span><select id="difficultySelect" aria-label="練習程度"><option value="beginner">入門</option><option value="intermediate" selected>中階</option><option value="advanced">進階</option></select></label>
+              <label class="setting-control"><span>時長</span><select id="durationSelect" aria-label="練習時長"><option value="3">3 分鐘</option><option value="5" selected>5 分鐘</option><option value="10">10 分鐘</option></select></label>
+            </div>
             <button class="start-button" id="startPractice">開始這次練習 <span>→</span></button>
           </div>
         </div>
-        <div class="session-strip"><span class="strip-icon">✳</span><span><b>一次只專注一件事</b><small>短練習・清楚回饋・照你的步調</small></span><span class="strip-time">約 5 分鐘</span></div>
+        <div class="session-strip"><span class="strip-icon">✳</span><span class="progress-copy"><b id="progressSummary">一次只專注一件事</b><small id="progressDetails">完成紀錄只存在本機，不保存你的作答</small></span><span class="strip-time" id="sessionPreference">約 5 分鐘</span></div>
       </section>
 
       <section class="how section-wrap" id="how"><div class="how-intro"><div class="eyebrow"><span class="eyebrow-dot"></span> A LITTLE GOES A LONG WAY</div><h2>有方向的小練習，<br><em>比一次全考更踏實。</em></h2><p>不用等準備好才開始。選定目標，做一個小練習，帶走下一步可以用上的回饋。</p></div>
@@ -73,7 +78,7 @@
     <footer><a class="brand footer-brand" href="#top"><span class="brand-mark">L<span>.</span></span><span>lingua lab</span></a><span>練習英文，照自己的方式。</span><a href="#practice">開始練習 ↑</a></footer>
   </div>
 
-  <dialog id="practiceDialog" class="practice-dialog"><button class="dialog-close" id="closeDialog" aria-label="關閉">×</button><div class="eyebrow"><span class="eyebrow-dot"></span> YOUR 5-MINUTE PRACTICE</div><div id="practiceContent"></div></dialog>
+  <dialog id="practiceDialog" class="practice-dialog"><button class="dialog-close" id="closeDialog" aria-label="關閉">×</button><div class="eyebrow dialog-eyebrow"><span class="eyebrow-dot"></span> FOCUSED PRACTICE</div><div id="practiceContent"></div></dialog>
   <script src="app.js"></script>
 </body>
 </html>
