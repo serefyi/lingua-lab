@@ -10,6 +10,13 @@
 - **再檢視條件**：有實際使用者回饋、可靠的評估規準，或產品需要跨裝置保存紀錄時重新評估。
 - **實作落地**：第一版主題、三階難度與 3／5／10 分鐘時長已實作；完成摘要只留存完成總數、技能累計及最近完成時間。
 
+## 2026-11-20：Pages workflow 維護
+
+- **決策**：將 checkout/configure-pages/upload-pages-artifact/deploy-pages 升級至 Node.js 24 相容主版本，並在發布流程加入 `node --check app.js`。
+- **理由**：原 workflow 每次成功部署仍會發出 Node.js 20 棄用警告；最新官方 releases 已提供 Node 24 主版本。deploy-pages v5 要求 workflow 有 `actions: read`，因此一併只授予必要的讀取權限。
+- **來源**：[checkout releases](https://github.com/actions/checkout/releases)、[configure-pages releases](https://github.com/actions/configure-pages/releases)、[upload-pages-artifact releases](https://github.com/actions/upload-pages-artifact/releases)、[deploy-pages releases](https://github.com/actions/deploy-pages/releases)。
+- **再檢視條件**：若 GitHub Actions runner 或官方 Pages action 發佈不相容變更，再調整版本與權限。
+
 ## 待釐清、但目前不阻塞的決策
 
 - **AI 個人化評估是否接入雲端模型**：建議先維持無 AI 評分的自我檢查；若未來接入，優先透過受控的伺服器端代理，不在公開前端放置 API 金鑰，並在送出作答前清楚說明資料用途。需在選定服務、成本上限與隱私要求後再實作。
