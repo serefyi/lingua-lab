@@ -33,7 +33,7 @@
 - [x] GitHub Pages 已由 GitHub Actions 成功部署：https://serefyi.github.io/lingua-lab/。
 - [x] 已補上第一版產品假設、決策紀錄與實作經驗文件；使用者定位尚待真實回饋驗證。
 - [x] 已實作情境主題、三階難度、可調時長、各技能題目與本機完成摘要。
-- [ ] 更新 Pages Actions 至 Node.js 24 相容版本並加入發布前語法檢查。
+- [x] 更新 Pages Actions 至 Node.js 24 相容版本並加入發布前語法檢查；已確認 build 與 deploy 成功。
 - [ ] 回饋仍是前端自我檢查提示，尚未接入 AI 評估或完整歷程。
 
 ### 已完成項目
